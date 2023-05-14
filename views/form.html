@@ -1,19 +1,21 @@
-{{ template "layout" .}}
-
-{{ define "main"}}
-<div class="content">
-    <form action="/process" method="post">
-        <div class="box-form">
-            <label for="name">Name</label>
-            <input type="text" name="name" id="name" placeholder="Your name" required>
-        </div>
-        <div class="box-form">
-            <label for="message">Message</label>
-            <textarea name="message" id="message" placeholder="Your message" required cols="30" rows="5"></textarea>
-        </div>
-        <div class="box-form">
-            <input type="submit" value="Send">
-        </div>
-    </form>
+{{ template "layout" .}} {{ define "main"}}
+<div class="container p-4 mt-5 mb-5 shadow">
+  <form action="/process" method="post">
+    <div class="mb-3">
+      <label for="InputName" class="form-label">Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="InputName"
+        name="name"
+        required
+      />
+    </div>
+    <div class="mb-3">
+      <label for="message" class="form-label">Message</label>
+      <textarea name="message" class="form-control" id="message" cols="30" rows="5" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
 </div>
 {{ end }}

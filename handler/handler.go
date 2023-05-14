@@ -106,7 +106,7 @@ func PostGet(w http.ResponseWriter, r *http.Request) {
 
 func Form(w http.ResponseWriter, r *http.Request) {
 	if r.Method == "GET" {
-		tmpl, err := template.ParseFiles(path.Join("views", "form.html"), path.Join("views", "layout.html"))
+		tmpl, err := template.ParseFiles(path.Join("views", "form.html"), path.Join("views", "layout.html"), path.Join("views", "footer.html"), path.Join("views", "navbar.html"))
 		if err != nil {
 			log.Print(err)
 			http.Error(w, "Error is happening keep calm", http.StatusInternalServerError)
@@ -142,7 +142,7 @@ func Process(w http.ResponseWriter, r *http.Request) {
 			"name": name,
 			"message": message,
 		}
-		tmpl, err := template.ParseFiles(path.Join("views", "result.html"), path.Join("views", "layout.html"))
+		tmpl, err := template.ParseFiles(path.Join("views", "result.html"), path.Join("views", "layout.html"), path.Join("views", "footer.html"), path.Join("views", "navbar.html"))
 		if err != nil {
 			log.Print(err)
 			http.Error(w, "Error is happening keep calm", http.StatusInternalServerError)

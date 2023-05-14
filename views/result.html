@@ -1,7 +1,14 @@
-{{ template "layout" .}}
-{{ define "main" }}
-<div class="content">
-    <p>Name : {{ .name }}</p>
-    <p>Message : {{ .message }}</p>
+{{ template "layout" .}} {{ define "main" }}
+<div class="container mt-5 mb-5">
+  <div class="card shadow">
+    <h5 class="card-header">Result</h5>
+    <div class="card-body">
+      <h5 class="card-title">{{ .name }}</h5>
+      <p class="card-text">
+        {{ .message }}
+      </p>
+      <a href="/form" class="btn btn-primary">Back</a>
+    </div>
+  </div>
 </div>
 {{ end }}
