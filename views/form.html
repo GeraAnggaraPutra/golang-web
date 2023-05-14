@@ -1,0 +1,19 @@
+{{ template "layout" .}}
+
+{{ define "main"}}
+<div class="content">
+    <form action="/process" method="post">
+        <div class="box-form">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" placeholder="Your name" required>
+        </div>
+        <div class="box-form">
+            <label for="message">Message</label>
+            <textarea name="message" id="message" placeholder="Your message" required cols="30" rows="5"></textarea>
+        </div>
+        <div class="box-form">
+            <input type="submit" value="Send">
+        </div>
+    </form>
+</div>
+{{ end }}
